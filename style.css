@@ -1,0 +1,264 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  background: #313D52;
+}
+
+header{
+  width: 100%;
+}
+
+.navegacion{
+  width: 1000px;
+  margin: 30px auto;
+  background: #fff;
+}
+
+.navegacion ul{
+  list-style: none;
+}
+
+.menu > li{
+  position: relative;
+  display: inline-block;
+}
+
+.menu > li > a{
+  display: block;
+  padding: 15px 20px;
+  color: #353535;
+  font-family: 'Open sans';
+  text-decoration: none;
+}
+
+.menu li a:hover{
+  color: #CE7D35;
+  transition: all .3s;
+}
+
+/* Submenu*/
+
+.submenu{
+  position: absolute;
+  background: #333333;
+  width: 120%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.submenu li a{
+  display: block;
+  padding: 15px;
+  color: #fff;
+  font-family: 'Open sans';
+  text-decoration: none;
+}
+
+.menu li:hover .submenu{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.Carrousel {
+  margin: 50px auto;
+  height: 18.4vw;
+  width: 100%;
+  .Arrows {
+     position: absolute;
+     display: none;
+     height: 53.4vw;
+     width: 95%;
+     left: 50%;
+     transform: translate(-50%);
+     z-index: 2;
+     &:hover {
+        cursor: pointer;
+     } 
+    &:hover ~ .New#Center {
+      .Info {
+        top: 0px;
+        .Header {
+          height: auto;
+          p {
+            padding: 0px;
+            margin: 10px;
+          }
+          hr {
+            width: 100%;
+          }
+        }
+      }
+    }
+    
+    .Arrow {
+      opacity: 0.3;
+      position: absolute;
+      top: 50%;
+      height: 100%;
+      background-color: RGBA(51,51,51,0.7);
+      display: inline-flex;
+      align-items: center;
+      i {
+        font-size: 5em;
+        color: white;
+        //transform: scale(0.5,1);
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &:first-of-type {
+        transform: translate(0,-50%);
+      }
+      &:nth-of-type(2) {
+        left: 100%;
+        transform: translate(-100%,-50%);
+      }
+    }
+  }
+  .New {
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transition: transform 500ms;
+    width: 33%;
+    height: 18.4vw;
+    &:hover {
+      cursor: pointer;
+      }
+    &#Center, &#Center2 {
+      transform: translateX(-50%);
+      z-index: 1;
+      }
+    &#Left {
+      transform: translateX(-100%);
+      }
+    &#Left {
+      opacity: 0.6;
+      transform:  translate(-100%) scale(0.8);
+      }
+    &#Right {
+      opacity: 0.6;
+      transform: scale(0.8);
+      }
+    img {
+      width: 100%;
+      }
+    &#Center:hover {
+         .Info {
+         top: 0px;
+            .Header {
+               height: auto;
+               p {
+                  padding: 0px;
+                  margin: 10px;
+               }
+               hr {
+                  width: 100%;
+               }
+            }
+         }
+      }
+    .Info {
+      transition: top 500ms;
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      width: 100%;
+      color: white;
+      top: 14vw;
+      overflow: hidden;
+      height: 18.4vw;
+      }
+      .Header {
+            height: 4.6vw;
+            p {
+               margin: 0px;
+               padding-top: 1.5vw;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 1.3em;
+            }
+            hr {
+               width: 0px;
+               height: 2px;
+               background-color: #FFF;
+               border: none;
+               transition: width 500ms ease-in-out;
+
+            }
+         }
+      .Body p {
+        margin: 10px;
+         }
+   }
+}
+
+
+
+@media(max-width: 1330px) {
+   .Carrousel {
+      height: 27.8vw;
+      .New {
+         height: 27.8vw;
+         width: 50%;
+         .Info {
+            height: 27.8vw;
+            top: 23vw;
+            .Header {
+               height: 6vw;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 950px) {
+   .Carrousel {
+      height: 27.8vw;
+      .New {
+         height: 27.8vw;
+         width: 50%;
+         .Info {
+            height: 27.8vw;
+            top: 21vw;
+            .Header {
+               height: 6vw;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 800px) {
+   .Carrousel {
+      height: 52.82vw;
+       .Arrows {  
+        display: inline-block; 
+       }
+      .New {
+         height: 53.4vw;
+         width: 95%;
+         &#Center {
+            display: inline-block;  
+         }
+         &#Left, &#Right {
+            display: none;  
+         }
+         .Info {
+            height: 53.4vw;
+            top: 44vw;
+            .Header {
+               height: 8vw;
+            }
+         }
+      }
+   }
+}
